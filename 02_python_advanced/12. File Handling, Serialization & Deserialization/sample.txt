@@ -1,0 +1,1 @@
+{'name': 'ganjo', 'age': 1000, 'gender': 'male'}
