@@ -103,6 +103,11 @@ Content may be updated, reorganized, or expanded as my understanding of data sci
 
 ---
 
+## 📝 Notes & Attribution
+> Note: While the notes are originally written and compiled by me, they have been **improvised, corrected, reviewed, and refined with the assistance of ChatGPT**. During the early stages of this repository (up to the *Vectorised String Operations* session in Pandas), emojis were intentionally used within the notes to improve readability and engagement.
+
+---
+
 ## 📄 License & Usage
 
 This repository is intended for **learning and educational purposes**.  
