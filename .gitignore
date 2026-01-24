@@ -12,3 +12,6 @@ venv/
 # OS junk
 .DS_Store
 Thumbs.db
+
+# pandas case study 2 dataset
+04_pandas/34. Pandas Case Study 2- Working with Textual Data/datasets/IMDB Dataset.csv
