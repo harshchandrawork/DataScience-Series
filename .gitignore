@@ -15,3 +15,6 @@ Thumbs.db
 
 # pandas case study 2 dataset
 04_pandas/34. Pandas Case Study 2- Working with Textual Data/datasets/IMDB Dataset.csv
+
+# matplotlib exported img
+06_data_visualization/35. Plotting using Matplotlib/sample.png
