@@ -18,3 +18,6 @@ Thumbs.db
 
 # matplotlib exported img
 06_data_visualization/35. Plotting using Matplotlib/sample.png
+
+# matplotlib dataset
+06_data_visualization/36. Advanced Matplotlib/IPL_Ball_by_Ball_2008_2022.csv
