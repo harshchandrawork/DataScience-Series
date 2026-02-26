@@ -3,6 +3,10 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 
+# Datasets can be downloaded from the following links:
+# [Indian Census Data with Geospatial Indexing](https://www.kaggle.com/datasets/sirpunch/indian-census-data-with-geospatial-indexing)
+# [India Census 2011](https://www.kaggle.com/datasets/danofer/india-census)
+
 st.set_page_config(layout="wide")
 
 df = pd.read_csv("../datasets/India Census 2011 Clean/india_census_2011_clean.csv")
