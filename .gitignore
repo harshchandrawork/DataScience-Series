@@ -27,3 +27,6 @@ Thumbs.db
 
 # datavis project datasets
 projects/41. Project using Plotly/datasets
+
+# data_gathering env file
+07_data_preparation/44. Data Gatheting and Analysis Process/.env
