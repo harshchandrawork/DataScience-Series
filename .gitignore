@@ -13,6 +13,9 @@ venv/
 .DS_Store
 Thumbs.db
 
+# IDE configs
+.idea
+
 # pandas case study 2 dataset
 04_pandas/34. Pandas Case Study 2- Working with Textual Data/datasets/IMDB Dataset.csv
 
@@ -30,3 +33,6 @@ projects/41. Project using Plotly/datasets
 
 # data_gathering env file
 07_data_preparation/44. Data Gathering and Analysis Process/.env
+
+# misc sessions
+08_data_acquisition_and_etl
