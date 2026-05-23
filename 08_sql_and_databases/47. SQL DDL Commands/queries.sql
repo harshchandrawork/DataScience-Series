@@ -1,0 +1,76 @@
+CREATE TABLE users (
+	user_id SERIAL PRIMARY KEY,
+	name VARCHAR(255) NOT NULL,
+	email VARCHAR(255) NOT NULL UNIQUE,
+	password VARCHAR(255) NOT NULL
+);
+
+-- ALTER TABLE users ADD PRIMARY KEY (user_id);
+
+CREATE TABLE students (
+	student_id SERIAL PRIMARY KEY,
+	name VARCHAR(50) NOT NULL,
+	age INTEGER,
+
+	CONSTRAINT students_age_check CHECK (age > 6 AND age < 25)
+);
+
+CREATE TABLE ticket (
+	ticket_id INTEGER PRIMARY KEY,
+	name VARCHAR(255) NOT NULL,
+	travel_date DATE DEFAULT CURRENT_DATE
+);
+
+CREATE TABLE customers (
+	cid SERIAL PRIMARY KEY,
+	name VARCHAR(255) NOT NULL,
+	email VARCHAR(255) NOT NULL UNIQUE
+);
+
+CREATE TABLE orders (
+	order_id INTEGER PRIMARY KEY,
+	cid INTEGER,
+	order_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+	CONSTRAINT orders_fk
+		FOREIGN KEY (cid)
+		REFERENCES customers(cid)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE
+);
+
+ALTER TABLE customers
+ADD COLUMN password VARCHAR(255) NOT NULL;
+
+ALTER TABLE customers
+ADD COLUMN surname VARCHAR(255) NOT NULL AFTER name;
+
+ALTER TABLE customers
+ADD COLUMN pan_number VARCHAR(255),
+ADD COLUMN joining_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
+
+ALTER TABLE customers
+DROP COLUMN password,
+DROP COLUMN joining_date;
+
+ALTER TABLE customers
+ADD COLUMN surname SERIAL;
+
+ALTER TABLE customers
+ALTER COLUMN surname
+ADD GENERATED ALWAYS AS IDENTITY;
+
+
+ALTER TABLE customers
+ADD COLUMN age INTEGER;
+
+ALTER TABLE customers
+ADD CONSTRAINT customer_age_check CHECK (age > 13);
+
+ALTER TABLE customers
+ALTER CONSTRAINT customer_age_check CHECK (age > 6);
+
+DROP TABLE users;
+
+TRUNCATE TABLE customers;
+TRUNCATE TABLE orders;
