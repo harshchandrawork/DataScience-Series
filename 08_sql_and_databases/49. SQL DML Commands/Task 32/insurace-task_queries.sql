@@ -49,7 +49,7 @@ WHERE age < 17 AND (bloodpressure BETWEEN 80+(age*2) AND 100+(age*2));
 -- 9. What is the average claim amount for non-smoking female patients who are diabetic?
 SELECT SUM(claim)
 FROM insurance
-WHERE gender = 'female' AND smoker = 'No' AND diabetic = 'Yes'
+WHERE gender = 'female' AND smoker = 'No' AND diabetic = 'Yes';
 
 -- 10. Write a SQL query to update the claim amount for the patient with PatientID = 1234 to 5000.
 SELECT claim
