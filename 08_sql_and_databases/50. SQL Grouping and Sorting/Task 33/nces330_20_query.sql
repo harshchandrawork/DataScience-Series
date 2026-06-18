@@ -3,9 +3,9 @@ SELECT state,
        ROUND(AVG(value), 2) AS avg_value,
        COUNT(*) AS occurence_count
 FROM nces330_20
-WHERE year = '2013' OR year = '2017' OR year = '2021' AND type = 'Public In-State'
+WHERE year IN ('2013', '2017', '2021') AND type = 'Public In-State'
 GROUP BY state
-HAVING COUNT(*) > 6 AND COUNT(*) < 10
+HAVING COUNT(*) BETWEEN 6 AND 10
 ORDER BY AVG(value)
 LIMIT 10;
 

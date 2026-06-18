@@ -25,7 +25,7 @@ GROUP BY gender;
        "Light sleep percentage",
        "Deep sleep percentage"
 FROM sleep_efficiency
-WHERE "Deep sleep percentage" > 25 AND "Deep sleep percentage" < 45
+WHERE "Deep sleep percentage" BETWEEN 25 AND 45
 ORDER BY "Light sleep percentage"
 OFFSET 29 LIMIT 1)
 UNION ALL
