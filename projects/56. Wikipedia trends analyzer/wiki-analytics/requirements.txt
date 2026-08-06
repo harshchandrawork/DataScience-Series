@@ -1,0 +1,7 @@
+psycopg[binary]
+psycopg_pool
+streamlit
+streamlit-extras
+plotly
+requests
+python-dotenv

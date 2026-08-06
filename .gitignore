@@ -37,3 +37,12 @@ projects/41. Project using Plotly/datasets
 # misc sessions
 08_data_acquisition_and_etl
 08_sql_and_databases/46. Database Fundamentals/basic_queries
+
+# incomplete tableau dashboard
+09_business_intelligence_and_dashboarding/51. Tableau Session 2
+
+# wiki-analytics .env & .toml
+08_sql_and_databases/55. Flight Dashboard using Python and SQL/.env
+08_sql_and_databases/55. Flight Dashboard using Python and SQL
+projects/56. Wikipedia trends analyzer/wiki-analytics/.env
+projects/56. Wikipedia trends analyzer/wiki-analytics/app/.streamlit/secrets.toml
