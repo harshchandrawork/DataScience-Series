@@ -1,0 +1,46 @@
+name: Wiki Data Sync (Every 4 Hours)
+
+on:
+  schedule:
+    # Runs every 4 hours (00:00, 04:00, 08:00, 12:00, 16:00, 20:00 UTC)
+    - cron: '0 */4 * * *'
+  workflow_dispatch: # Allows manual triggering from GitHub UI
+
+jobs:
+  ingest-and-rollup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Run Recent Changes Sync
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: python ingestion/recentchanges_sync.py
+
+      - name: Run Pageviews Sync
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: python ingestion/pageviews_sync.py
+
+      - name: Run Rollup and Prune
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: python ingestion/rollup_and_prune.py
+
+      - name: Run Category Trends
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: python ingestion/category_trends.py
